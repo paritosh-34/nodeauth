@@ -3,7 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require("connect-flash");
-const session = require('express-session');
+const session = require("express-session");
 const passport = require("passport");
 const connectDB = require("./util/connectDB");
 
@@ -24,14 +24,14 @@ app.use(morgan("dev"));
 // ejs
 app.use(expressLayouts);
 app.set("view engine", "ejs");
-app.set('layout', 'layouts/layout');
+app.set("layout", "layouts/layout");
 
 // Express session
 app.use(
   session({
-    secret: 'secret',
+    secret: "secret",
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
   })
 );
 
@@ -43,13 +43,12 @@ app.use(passport.session());
 app.use(flash());
 
 // Global variables
-app.use(function(req, res, next) {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
+app.use(function (req, res, next) {
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error = req.flash("error");
   next();
 });
-
 
 // Static folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -62,5 +61,6 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(
   PORT,
+  "0.0.0.0",
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 );
