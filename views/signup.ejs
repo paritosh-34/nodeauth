@@ -1,0 +1,67 @@
+<div class="login-container">
+  <h1>Sign Up</h1>
+  <form action="/users/register" method="post">
+    <label for="username">
+      Username:<br />
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Enter your username"
+        value="<%= typeof username != 'undefined' ? username : '' %>"
+        required
+      />
+    </label>
+
+    <br />
+    <br />
+
+    <label for="email">
+      Email:<br />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        value="<%= typeof email != 'undefined' ? email : '' %>"
+        required
+      />
+    </label>
+
+    <br />
+    <br />
+
+    <label for="phone">
+      Phone:<br />
+      <input
+        type="number"
+        name="phone"
+        id="phone"
+        placeholder="Enter your phone"
+        value="<%= typeof phone != 'undefined' ? phone : '' %>"
+        required
+      />
+    </label>
+
+    <br />
+    <br />
+
+    <label for="password">
+      Password:<br />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter your password"
+        value="<%= typeof password != 'undefined' ? password : '' %>"
+        required
+      />
+    </label>
+
+    <br />
+    <br />
+
+    <%- include("partials/messages") %>
+    <button class="btn2" style="width: 100%">Submit</button>
+  </form>
+</div>

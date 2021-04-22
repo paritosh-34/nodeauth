@@ -1,0 +1,57 @@
+<div class="login-container">
+  <h1>Welcome <%= user.username %></h1>
+
+  <h2>Add Contact:</h2>
+  <form action="/dashboard" method="post">
+    <label for="username">
+      Name:<br />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter name"
+        value="<%= typeof name != 'undefined' ? name : '' %>"
+        required
+      />
+    </label>
+
+    <br />
+    <br />
+
+    <label for="email">
+      Email:<br />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter email"
+        value="<%= typeof email != 'undefined' ? email : '' %>"
+        required
+      />
+    </label>
+
+    <br />
+    <br />
+
+    <label for="phone">
+      Phone:<br />
+      <input
+        type="number"
+        name="phone"
+        id="phone"
+        placeholder="Enter phone"
+        value="<%= typeof phone != 'undefined' ? phone : '' %>"
+        required
+      />
+    </label>
+
+    <br />
+    <br />
+
+    <%- include("partials/messages") %>
+    <button class="btn2" style="width: 100%">Create contact</button>
+  </form>
+</div>
+
+<h2 style="margin-top: 2rem">Saved Contacts:</h2>
+<%- include("partials/contacts") %>

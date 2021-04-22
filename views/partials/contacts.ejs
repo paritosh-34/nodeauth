@@ -1,0 +1,18 @@
+<% if (locals.contacts) { %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+  <% contacts.forEach(function(contact) { %>
+  <tr>
+    <td><%= contact.name %></td>
+    <td><%= contact.phone %></td>
+    <td><%= contact.email %></td>
+  </tr>
+  <% }); %>
+</table>
+<% } else { %>
+<div class="no-info">No contacts saved yet</div>
+<% } %>

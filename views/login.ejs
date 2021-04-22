@@ -1,0 +1,23 @@
+<div class="login-container">
+  <%- include("partials/messages") %>
+  <h1>Login</h2>
+    <form action="/users/login" method="post">
+      <label for="username">
+        Username:<br />
+        <input type="text" name="username" placeholder="Enter your username" id="username" required />
+      </label>
+
+      <br />
+      <br />
+
+      <label for="password">
+        Password:<br />
+        <input type="password" name="password" placeholder="Enter your password" id="password" required />
+      </label>
+
+      <br />
+      <br />
+
+      <button class="btn2">Login</button>
+    </form>
+</div>
